@@ -8,10 +8,6 @@ module.exports = think.controller(Base, {
    * @return {Promise} []
    */
   indexAction: function(self){
-    this.assgin("title","这里是首页~");
     return self.display();
-  },
-  testAction:function(self){
-      return self.display();
   }
 });
