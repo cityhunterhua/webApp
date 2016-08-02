@@ -1,7 +1,8 @@
 'use strict';
 /**
  * model
+ * @type {Class}
  */
-export default class extends think.model.base {
+module.exports = think.model({
 
-}
+});

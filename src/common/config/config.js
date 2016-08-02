@@ -1,9 +1,11 @@
-
 'use strict';
 /**
  * config
+ * @type {Object}
  */
-export default {
-    port:8088
+module.exports = {
+    port:8088,
+    timeout:120,
+    default_module:"home"
   //key: value
 };

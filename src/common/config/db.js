@@ -3,16 +3,16 @@
  * db config
  * @type {Object}
  */
-export default {
+module.exports = {
   type: 'mysql',
   adapter: {
     mysql: {
       host: '127.0.0.1',
-      port: '',
-      database: '',
-      user: '',
-      password: '',
-      prefix: 'think_',
+      port: '3306',
+      database: 'db_webapp',
+      user: 'root',
+      password: '123456',
+      prefix: '',
       encoding: 'utf8'
     },
     mongo: {
