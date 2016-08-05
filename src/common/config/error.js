@@ -1,9 +1,8 @@
 'use strict';
 /**
  * err config
- * @type {Object}
  */
-module.exports = {
+export default {
   //key: value
   key: "errno", //error number
   msg: "errmsg" //error message

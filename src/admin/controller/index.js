@@ -1,17 +1,14 @@
 'use strict';
 
-var Base = require('./base.js');
+import Base from './base.js';
 
-module.exports = think.controller(Base, {
+export default class extends Base {
   /**
    * index action
    * @return {Promise} []
    */
-  indexAction: function(self){
-    this.assgin("title","这里是首页~");
-    return self.display();
-  },
-  testAction:function(self){
-      return self.display();
+  indexAction(){
+    //auto render template file index_index.html
+    return this.display();
   }
-});
+}
