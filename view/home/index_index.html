@@ -5,6 +5,141 @@
   <meta name="keywords" content="<%=_sys.keywords%>">
   <meta name="description" content="<%=_sys.description%>">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <style type="text/css">
+
+    .icondiv {
+      margin-left: 15px;
+      position: absolute;
+    }
+    .iconclass {
+      float: left;
+    }
+    @media (max-width: 1224px) {
+      #bannerbg {
+        margin: 0 auto;
+        width: 990px !important;
+      }
+      .bannerbg_small {
+        display: none;
+      }
+    }
+    #bannerbg {
+      margin: 0 auto;
+      padding-bottom: 20px;
+      width: 1200px;
+    }
+    .bannerbg_big {
+      float: left;
+    }
+    .bannerbg_small {
+      float: right;
+    }
+    .giftClassify {
+      background-color: #fff;
+      border: 1px solid #ebebeb;
+      margin: 0 auto 20px;
+      padding: 26px 0;
+      width: 1200px;
+    }
+    .giftClassify .tletxt {
+      margin-left: 22px;
+    }
+    .classify-cont dl {
+      float: left;
+      margin: 0 22px;
+      width: 250px;
+    }
+    .classify-cont dl dt {
+      color: #333;
+      font: bold 14px "宋体";
+      padding: 20px 0 10px;
+    }
+    .classify-cont dl dd {
+      height: 88px;
+      line-height: 22px;
+    }
+    .classify-cont dl dd a {
+      display: inline-block;
+      margin-right: 16px;
+    }
+    .classify-cont dl dd a.light {
+      color: #e44715;
+    }
+    .giftClassify a, .giftClassify a:visited {
+      color: #999;
+      line-height: 1.8;
+      padding-right: 10px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .giftClassify a:hover, .giftClassify a:active {
+      color: #f4614d;
+      text-decoration: none;
+    }
+    .giftClassify .cate-cont {
+      display: inline;
+      float: left;
+      line-height: 1.8;
+      margin-left: 15px;
+      width: 860px;
+    }
+    .giftClassify .gift-xq .cate-item {
+      padding: 12px 0;
+    }
+    .giftClassify .gift-lm .cate-item {
+      float: left;
+      height: 85px;
+      padding: 12px 0;
+      width: 270px;
+    }
+    .giftClassify .vm-cap {
+      color: #000;
+      font-weight: bold;
+      line-height: 2;
+    }
+    .giftClassify .vm-cap a, .giftClassify .vm-cap a:visited {
+      color: #000;
+    }
+    .giftClassify .vm-cap a:hover, .giftClassify .vm-cap a:active {
+      color: #f4614d;
+    }
+    .giftClassify .gift-xq {
+      border-right: 1px solid #ccc;
+      float: left;
+      height: 450px;
+      padding-left: 20px;
+      width: 300px;
+    }
+    .giftClassify .gift-tle {
+      font-family: 微软雅黑;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 20px 0 0;
+    }
+    .giftClassify .gift-lm {
+      float: left;
+      padding-left: 10px;
+      width: 860px;
+    }
+    .giftClassify .gift-lm .gift-tle {
+      margin-left: 10px;
+    }
+    .giftClassify .gift-xq .vm-cap {
+      font-size: 14px;
+    }
+    @media (max-width: 1224px) {
+      .giftClassify {
+        width: 990px;
+      }
+      .giftClassify .gift-lm, .giftClassify .cate-cont {
+        width: 625px;
+      }
+      .giftClassify .gift-lm .cate-item {
+        height: 70px;
+        width: 295px;
+      }
+    }
+  </style>
   <%include inc/header.html%>
 <body>
   <%include inc/menu.html%>
@@ -1017,6 +1152,7 @@
       </div>
     </div>
   </sction>
+  <div class="fast-nav" id="J_FastNav"><ul> <li title="送礼问我" class="fast-li"><p title="送礼问我" onclick="NTKF.im_openInPageChat('kd_1000_9999');" class="fast-a onl_askme"><i class="icon-wenwo"></i><span>送礼<br>问我</span></p></li><li title="我的收藏" id="J_myColl" class="fast-li"><i class="collNum"></i><a href="javascript:;" class="fast-a collLink"><span>我的<br>收藏</span></a><div class="coll-cont"><a class="closeColl" href="javascript:void(0);"></a><div class="txt"><a class="loginColl" href="javascript:void(0);">登录</a>后，您的收藏信息将自动保存到“我的收藏夹”中哦！</div><div class="collBox"><a href="#left" class="abtn aleft">上移</a><a href="#right" class="abtn aright">下移</a><div class="collScroll"><ul></ul></div></div></div></li><li title="我有话说" class="fast-li"><a class="fast-a mod-hover onl_advice" href="javascript:{}"><i class="icon-message"></i><span>我有<br>话说</span></a></li><li title="APP下载" class="codeHover fast-li" id="app_Code"><a href="javascript:;" class="fast-a codeLink"><i class="icon-weix"></i><span class="hide">APP<br>下载</span></a><div class="code-cont" style="display: none; opacity: 1;"></div></li><li title="回到顶部" class="fast-li" id="J_GoTop" style="opacity: 1;"><a class="fast-a mod-hover" href="javascript:;"><i class="icon-gotop"></i><span>回到<br>顶部</span></a></li></ul></div>
   <%include inc/footer.html%>
 </body>
 </html>
