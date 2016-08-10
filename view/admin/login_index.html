@@ -1,0 +1,158 @@
+<%include inc/header.html%>
+<link rel="stylesheet" href="<%=_STATIC%>common/css/module.css?ver=<%=_sys.version%>" rel="stylesheet">
+<link rel="stylesheet" href="<%=_STATIC%>admin/css/login.css?ver=<%=_sys.version%>" rel="stylesheet">
+
+<section class="login_body" id="login_body">
+  <div class="banner">
+    <div style="z-index:100;" class="banner_position">
+      <ul class="banner_list" style="top: -560px;">
+          <li style="background:#08172e;">
+            <div class="banner_wrap">
+              <img src="<%=_STATIC%>admin/img/banner_xr.jpg">
+            </div>
+          </li><li style="background:url('<%=_STATIC%>admin/img/banner4.jpg');">
+          <div class="banner_wrap">
+            <img src="<%=_STATIC%>admin/img/banner3.jpg">
+          </div>
+        </li>
+      </ul>
+      <div class="banner_pointer">
+        <div class="wrap">
+          <div class="banner_point_list">
+            <span class="">&nbsp;</span>
+            <span class="cur">&nbsp;</span>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        var bi = 0;
+        var bCount = $('.banner_list li').size();
+        setInterval(function(){
+          bi++;
+          if(bi==bCount)bi=0;
+          $('.banner_list').animate({'top':-560*bi});
+          $('.banner_point_list span').eq(bi).addClass('cur')
+                  .siblings().removeClass('cur');
+        },4000);
+      </script>
+    </div>
+    <div style="z-index:200; height:0; overflow:visible" class="banner_position">
+      <div style="height:0; overflow:visible" class="banner_wrap">
+        <div style=" height:560px;" class="text_wrap">
+
+          <div class="tableBox"><span class="active">登录</span><span>新用户注册</span></div>
+          <!--登录-->
+          <section class="login_box boxTable">
+            <form method="post" action="/admin/login" id="form1" class="login-form">
+              <input type="hidden" id="csrf" value="<%=csrf%>">
+              <div class="form_body">
+                <div class="input_panel">
+                  <div class="control-group">
+                    <label for="inputEmail" class="control-label">用户名</label>
+                    <div class="controls">
+                      <span class="fa fa-user"></span>
+                      <input type="text" name="username" value="" datatype="*1-16" nullmsg="请填写用户名" errormsg="请填写1-16位用户名" ajaxurl="/member/checkUserNameUnique.html" placeholder="请输入用户名" class="span3 j_UserName" id="inputEmail">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label for="inputPassword" class="control-label">密码</label>
+                    <div class="controls">
+                      <span class="fa fa-key"></span>
+                      <input type="password" name="password" datatype="*6-20" nullmsg="请填写密码" errormsg="密码为6-20位" placeholder="请输入密码" class="span3 j_PassWord" id="inputPassword">
+                    </div>
+                  </div>
+                </div>
+                <div class="controls Validform_checktip text-warning"></div>
+                <div class="control-group">
+                  <div class="controls">
+                    <input type="checkbox" class="regular-checkbox" id="checkbox"><label for="checkbox"></label>
+                    自动登录
+                  </div>
+                  <div class="controls">
+                    <button style="background: #1dbd03;" class="btn btn-large j_Button" type="button">登 录</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </section>
+
+          <!--注册-->
+          <section style="display: none;" class="reg_box boxTable">
+            <form method="post" action="http://dev.ilifeceo.com/wp/index.php?s=/Home/User/register.html" id="form2" class="login-form">
+              <div class="form_body">
+                <div class="control-group">
+                  <label for="username" class="control-label">用户名</label>
+                  <div class="controls">
+                    <input type="text" name="username" value="" datatype="*1-16" nullmsg="请填写用户名" errormsg="请填写1-16位用户名" ajaxurl="/member/checkUserNameUnique.html" placeholder="请输入用户名" class="span3" id="username">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label for="inputPassword" class="control-label">密码</label>
+                  <div class="controls">
+                    <input type="password" name="password" datatype="*6-20" nullmsg="请填写密码" errormsg="密码为6-20位" placeholder="请输入密码" class="span3" id="inputPassword">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label for="repassword" class="control-label">确认密码</label>
+                  <div class="controls">
+                    <input type="password" name="repassword" datatype="*" nullmsg="请填确认密码" errormsg="您两次输入的密码不一致" recheck="password" placeholder="请再次输入密码" class="span3" id="repassword">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label for="inputEmail" class="control-label">邮箱</label>
+                  <div class="controls">
+                    <input type="text" name="email" value="" datatype="e" nullmsg="请填写邮箱" errormsg="请填写正确格式的邮箱" ajaxurl="/member/checkUserEmailUnique.html" placeholder="请输入电子邮件" class="span3" id="inputEmail">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label for="verify" class="control-label">验证码</label>
+                  <div class="controls">
+                    <input type="text" name="verify" datatype="*5-5" nullmsg="请填写验证码" errormsg="请填写5位验证码" placeholder="请输入验证码" class="span3" id="verify">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <!--<label class="control-label"></label>-->
+                  <div style="width: 270px; margin: 0 auto; float: none;" class="controls">
+                    <img style="cursor:pointer; margin-left: 45px; width: 245px; height: 50px;" src="http://dev.ilifeceo.com/wp/index.php?s=/Home/User/verify.html" alt="点击切换" class="verifyimg reloadverify">
+                    <div class="Validform_checktip text-warning"></div>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <!--<label class="control-label">&nbsp;</label>-->
+                  <div style="width: 308px; margin: 0 auto; float: none;" class="controls">
+                    <button style="width: 100%;background: #1dbd03;" class="btn" type="submit">注 册</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function(){
+      $(".j_Button").click(function(){
+        var mydata={
+          username:$(".j_UserName").val(),
+          password:$(".j_PassWord").val(),
+          __CSRF__:$("#csrf").val()
+        }
+        $.ajax({
+          url:'/home/login/dologin',
+          data:mydata,
+          type:'POST',
+          success:function(json){
+            if(json.status===1){
+              window.location.href="/admin/index";
+            }else {
+
+            }
+          }
+        })
+      })
+    })
+  </script>
+  <%include inc/footer.html%>
+</section>

@@ -1,0 +1,139 @@
+  /* 登录 */
+ .navbar{position:relative;}
+ .banner{float:left; height:550px;}
+ .top_nav{display:none;}
+  .banner_position {
+    height: 560px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+  }
+  .banner_list {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+  .banner_list li {
+    width: 100%;
+  }
+  .banner_list li img {
+    display: block;
+  }
+  .banner_point_list {
+    margin-left: 250px;
+  }
+  .banner_pointer {
+    bottom: 10px;
+    position: absolute;
+    width: 100%;
+  }
+  .banner_point_list span {
+    border: 2px solid #0c0;
+    border-radius: 5px;
+    display: block;
+    float: left;
+    height: 10px;
+    margin: 10px;
+    overflow: hidden;
+    width: 10px;
+  }
+  .banner_point_list span.cur {
+    background: #0c0 none repeat scroll 0 0;
+  }
+  .banner_wrap {
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 1000px;
+  }
+  .banner .desc_pic {
+    display: none;
+  }
+  .banner .text_wrap {
+    background: rgba(255, 255, 255, 0.5) none repeat scroll 0 0;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 350px;
+  }
+  .banner .text_wrap .tableBox {
+    margin: 100px auto 0;
+    overflow: hidden;
+    width: 90%;
+  }
+  .banner .text_wrap .tableBox span {
+    background: #ccc none repeat scroll 0 0;
+    color: #646464;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 14px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    width: 50%;
+  }
+  .banner .text_wrap .tableBox .active {
+    background: #1fce02 none repeat scroll 0 0;
+    color: #fff;
+  }
+  .banner .desc {
+    color: #333;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 40px 20px 20px;
+  }
+  .banner .version {
+    color: #888;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 20px 20px;
+  }
+  #login_body footer{ display:block;}
+  .login_box,.reg_box{ width:400px; margin:50px auto; color:#666; padding:30px 100px;}
+  .login_box{ margin-top:100px;}
+  .login_box a{ color:#fff; font-size:15px;}
+  .login_box a:hover{ color:#1dbd03}
+  .logo_icon,.logo_icon img{ width:145px; height:114px; margin:0 auto; }
+  .logo_text{ height:30px; margin:20px 0 10px; background:url(../img/logo_text.png) center top no-repeat; position:relative}
+  .logo_text .beta{ position:absolute; height:24px; width:76px; right:45px; top:0; background:url(../img/beta2.0.png) no-repeat; display:none}
+  .form_title{text-align:center; color:#ccc; font-size:16px; display:none}
+  .login_box .form_body{ margin-top:30px;}
+  .login_box .control-label{ display:none}
+  .login_box .controls{ margin:20px auto 0; display:block; width:308px; position:relative; color:#fff}
+  .login_box input[type="text"],.login_box input[type="password"]{ padding-left:35px; width:308px;}
+  .login_box .controls .fa{ position:absolute; top:10px; left:10px; font-size:20px; color:#aaa;}
+  .list_img {width:50px;}
+  .login_box .verifyimg{ margin-top:10px; width:100%}
+  .login_box .btn{ width:100%;}
+  .login_box .reloadverify_a{ position:absolute; top:10px; right:10px;}
+  .reg_box input{ width:256px;}
+  .reg_box .control-group{ overflow:hidden;zoom:1; margin-top:20px;}
+  .reg_box .control-label{ width:70px; height:30px; float:left; text-align:right; padding-right:15px; line-height:30px; color:#fff}
+  .reg_box .controls{ float:left;}
+  .reg_box .verifyimg{ width:274px;}
+  .reg_box .btn{ padding:10px 0; margin-top:15px; width:274px;}
+  .login_top_btn{ position:absolute; top:20px; right:20px;}
+  .login_top_btn .btn{ background-color:RGBA(255,255,255,.4); color:#fff; padding:8px 20px; border-radius:30px; margin:10px;}
+  .login_top_btn .btn:hover{ background-color:#fff; color:#333}
+  .text-warning{ color:#F60; margin-top:5px}
+  #login_body{ background: #fff;}
+  .footer{ background: #333; padding: 20px 0; }
+  .footer p{ color: #fff;}
+  .login_box,.reg_box{padding: 0; width: 100%;}
+  .login_box{ margin-top: 120px;}
+  .reg_box{ margin-top: 40px;}
+  .banner .text_wrap .tableBox{ width: 89%;}
+  .control-group input{ background: rgba(255,255,255,0.7);}
+  .reg_box input{ width: 226px;}
+  .reg_box .control-group{ margin-top: 5px;}
+  .regular-checkbox:checked + label::after{ top: -3px;}
+  .regular-checkbox + label{padding: 7px; margin-top: -1px;}

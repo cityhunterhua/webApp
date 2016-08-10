@@ -1,0 +1,70 @@
+/**
+ * weiphp公用css
+ */
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {display: inline-table;}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+
+
+/* 头部 */
+.navbar{ height:50px; width:100%; background:url(../img/login_bg.jpg) no-repeat; position:fixed; top:0; border-bottom:2px solid #222; z-index:10000;}
+.brand{ padding:5px 10px; display:block; float:left;}
+.top_nav{ float:right; padding:0 10px 0 130px;}
+.top_nav a{ color:#fff;}
+.top_nav li.dropdown{ position:relative; padding: 0 10px;}
+.top_nav li:hover{ background:#222}
+.top_nav li.dropdown>a{ line-height:46px; width:auto; height:46px; overflow:hidden; padding:0 20px;}
+.top_nav li.dropdown>a:hover{ background:#222;}
+.top_nav li.dropdown ul{ position:absolute; width:100%; top:46px; left:0; background:#222;position: absolute;color:#fff;float: none;min-width: 100%;padding: 0;margin: 0;list-style: none;
+    border: none;-webkit-border-radius: 0;-moz-border-radius: 0;border-radius: 0;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;
+-webkit-background-clip: none;-moz-background-clip: none;background-clip: none;}
+.top_nav li.dropdown ul li{ float:none}
+.top_nav li.dropdown ul a{ display:block; height:40px; line-height:40px; padding:0 20px;}
+.top_nav li.dropdown ul a:hover{ background:#111;}
+.top_nav .dropdown-menu > li > a{ color:#fff}
+
+/* 侧栏 */
+.sidebar{ position:fixed; top:50px; left:0; bottom:0; width:180px; background:url(../img/login_bg.jpg) no-repeat; overflow-y:auto; overflow-x:hidden; padding-bottom:30px;}
+.sidebar li a{ display:block;color:#ddd; height:40px; border-bottom:1px solid #161e38; border-top:1px solid #000; line-height:40px; padding:0 10px;}
+.sidebar li a:hover{ color:#6b6a89;}
+.sidebar li.active a{ color:#1bb801; background:#fff; font-weight:bold}
+.sidebar .fa{ font-size:15px; padding-right:10px;}
+.sidebar .arrow{ color:#ddd; font-size:10px; padding-left:10px;}
+.sidebar li .sidenav_sub a{ padding-left:15px;}
+.sidebar li .sidenav_sub li{ position:relative;}
+.sidebar li .sidenav_sub li .active_arrow{ position:absolute; right:0; top:0; height:100%; width:14px; background:url(../img/arrow_left.png) center center no-repeat; display:none}
+.sidebar li .sidenav_sub li.active .active_arrow{ display:block}
+/* 主栏 */
+.main_body{ margin:50px 0 0 180px; min-height:800px; background:#eee;}
+/* 顶部提示 */
+.top-alert-tips{position:fixed; top:0; left:50%; margin-left:-300px; width:600px; z-index:10099; background:#1dbd03; border-bottom-left-radius:10px;border-bottom-right-radius:10px; color:#fff; height:50px; line-height:50px; white-space:nowrap; padding:0 20px;}
+.alert-success{background:#1dbd03;}
+.alert-error{background:#fb1d0f;}
+.top-alert-tips .close{ position:absolute; top:10px; right:0px; width:30px; height:30px; line-height:30px; color:#fff; font-size:22px;}
+/* 底部footer */
+.footer{ padding:10px 20px 10px 10px; text-align: center; background-color:#eee; clear:both; font-size: 14px;}
+.footer p{ color:#666;}
+.footer p a{ color:#333;}
+/*菜单样式*/
+#main-container .sidebar{background: #33363f;}
+#main-container .sidebar li a{border-bottom: 1px solid #4e515b; border-top: 1px solid #242730; height: 52px; line-height: 52px; color: #939393;}
+#main-container .sidebar .isopen{background: #232732;color: #00adee;}
+
+/*头部样式*/
+.navbar{background: #f3f3f3; border-bottom: 4px solid #00adee;}
+.navbar .brand{padding: 0;}
+.top_nav .dropdown:first-child{ border-right: 1px solid #ccc; border-left: 1px solid #ccc;}
+.top_nav a{color:#898989;}
+.top_nav li.dropdown ul{background: #33363f; }
+.top_nav .dropdown-menu > li > a{color: #939393;}
+/*.nav li a:hover{background: #33363f;color: #00adee;}*/
+
+
+

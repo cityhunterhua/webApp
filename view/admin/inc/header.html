@@ -1,15 +1,44 @@
-<link rel="shortcut icon" href="<%=_STATIC%>common/images/favicon.png" type="image/x-icon">
-<!--
-<link rel="stylesheet" href="<%=_STATIC%>public/bootstrap/3.3.5/css/bootstrap.min.css?ver=<%=_sys.version%>" rel="stylesheet">
--->
-<link rel="stylesheet" href="<%=_STATIC%>home/css/base.css?ver=<%=_sys.version%>" rel="stylesheet">
-<link rel="stylesheet" href="<%=_STATIC%>home/css/header.css?ver=<%=_sys.version%>" rel="stylesheet">
-<link rel="stylesheet" href="<%=_STATIC%>home/css/footer.css?ver=<%=_sys.version%>" rel="stylesheet">
-<link rel="stylesheet" href="<%=_STATIC%>home/css/index.css?ver=<%=_sys.version%>" rel="stylesheet">
-<link rel="stylesheet" href="<%=_STATIC%>home/css/online.css?ver=<%=_sys.version%>" rel="stylesheet">
-
-<script src="<%=_STATIC%>public/jquery/1.11.3/jquery.min.js?ver=<%=_sys.version%>"></script>
-<script src="<%=_STATIC%>public/bootstrap/3.3.5/js/bootstrap.min.js?ver=<%=_sys.version%>"></script>
-<script>
-</script>
-
+<!Doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="<%=_sys.keywords%>" name="keywords"/>
+    <meta content="<%=_sys.description%>" name="description"/>
+    <link rel="shortcut icon" href="<%=_STATIC%>common/images/favicon.png" type="image/x-icon">
+    <title><%=_sys.sitename%>后台管理系统</title>
+    <link rel="stylesheet" href="<%=_STATIC%>common/css/base.css?ver=<%=_sys.version%>" rel="stylesheet">
+    <link rel="stylesheet" href="<%=_STATIC%>public/bootstrap/3.3.5/css/bootstrap.min.css?ver=<%=_sys.version%>" rel="stylesheet">
+    <link rel="stylesheet" href="<%=_STATIC%>public/font-awesome/css/font-awesome.css?ver=<%=_sys.version%>" rel="stylesheet">
+    <link rel="stylesheet" href="<%=_STATIC%>admin/css/admin.css?ver=<%=_sys.version%>" rel="stylesheet">
+    <script src="<%=_STATIC%>public/jquery/1.11.3/jquery.min.js?ver=<%=_sys.version%>"></script>
+    <script src="<%=_STATIC%>public/bootstrap/3.3.5/js/bootstrap.min.js?ver=<%=_sys.version%>"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".j_DropMenu").mouseover(function(){
+                $(this).find(".dropdown-menu").show();
+            }).mouseout(function(){
+                $(this).find(".dropdown-menu").hide();
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <a href="/" title="西软后台管理系统" class="brand">
+            <img height="45" title="连边科技微信平台" src="<%=_STATIC%>common/images/xr_logo.png">
+        </a>
+        <div class="top_nav">
+            <ul style="margin-right:0" class="nav">
+                <li class="dropdown admin_nav j_DropMenu">
+                    <a style="" data-toggle="dropdown" class="dropdown-toggle login-nav" href="#">zhangyh <b class="pl_5 fa fa-sort-down"></b></a>
+                    <ul style="display:none" class="dropdown-menu">
+                        <li><a href="http://dev.ilifeceo.com/wp/index.php?s=/Admin/index/index.html">后台管理</a></li>
+                        <li><a href="http://dev.ilifeceo.com/wp/index.php?s=/Home/User/profile.html">修改密码</a></li>
+                        <li><a href="http://dev.ilifeceo.com/wp/index.php?s=/Home/User/logout.html">退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,116 +1,188 @@
-<header>
-    <div data-pagetype="index_index" class="header">
-        <div class="container">
-            <div class="lay-logo">
-                <span class="bg"><a kdref="366" title="<%=_sys.sitename%>" class="logo-link" target="_self" href="http://www.kadang.com/?ref_wbt=3.2-2.3.366.0&amp;ref_refer=%2F" wbury="1"><%=_sys.sitename%></a></span>
-                <!--<a href="http://love.kadang.com/zt/qixi.html" target="_self" class="logo-link" title="七夕"  kdref="365"><img src="http://www.kadang.com/static/mall/index/logo-right.gif" alt="七夕" style="margin-top: -20px"></a>-->
-            </div>
-            <div kdref="1031" class="lay-intro clearfix">
-                <div id="J_IntroMenu" class="intro-menu">
-                    <ul class="clearfix">
-                        <li class="mod-menu">
-                            <a title="我的猎物" target="_top" class="vm-hd islog" href="/index.php?ref_wbt=3.2-2.3.1031.0&amp;ref_refer=%2F&amp;act=member_snsindex" wbury="1">我的猎物<i class="intro-icons icons-down trans rotate"></i><!--<em class="tipNum">2</em>--></a>
-                            <div style="left: 0px; display: none;" class="vm-bd dropdown my-own">
-                                <ul>
-                                    <li><a title="我的订单" target="_top" class="islog" href="/index.php?ref_wbt=3.2-2.3.1031.1&amp;ref_refer=%2F&amp;act=member&amp;op=order" wbury="1">我的订单</a></li>
-                                    <!--<li><i class="tipD"></i><a href="/index.php?act=member&amp;op=order" class="islog" target="_top">我的物流</a></li>-->
-                                    <li><a title="我的优惠券" target="_top" class="islog" href="/index.php?ref_wbt=3.2-2.3.1031.2&amp;ref_refer=%2F&amp;act=member_coupon&amp;op=list" wbury="1">我的优惠券</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mod-menu">
-                            <a title="购物车" target="_top" class="vm-hd" href="/index.php?ref_wbt=3.2-2.3.1031.3&amp;ref_refer=%2F&amp;act=cart" wbury="1"> <i class="intro-icons icons-cart"></i>购物车<!-- <em>0</em>件 --><i class="intro-icons icons-down trans rotate"></i></a>
-                            <div id="J_MiniCart" class="vm-bd dropdown mini-cart"><p class="vm-empty">您的购物车中暂无商品，赶快选择心爱的商品吧！</p>
-                            </div>
-                        </li>
-                        <li class="mod-menu">
-                            <a title="手机版" target="_blank" style=" border:0;" class="vm-hd" href="http://www.kadang.com/zt/ToMobile.html?ref_wbt=3.2-2.3.1031.4&amp;ref_refer=%2F" wbury="1"><i class="mobile_icon"></i>手机版
-                            </a>
-                            <div class="vm-bd dropdown my-phone" style="display: none;">
-                                <img src="http://img1.i.kadang.cn/static/mall/index/img-code.jpg">
-                            </div>
+<script type="text/javascript">
+    $(function(){
+        //侧栏
+        $('.sidenav_parent').click(function(){
+            if($(this).hasClass('isopen')){
+                $(this).next().hide();
+                $(this).find('.ficon').addClass('fa-plus-square').removeClass('fa-minus-square');
+                $(this).removeClass('isopen');
+            }else{
+                $(this).addClass('isopen');
+                $(this).next().show();
+                $(this).find('.ficon').removeClass('fa-plus-square').addClass('fa-minus-square');
+            }
+        });
+    })
 
-                        </li>
-                        <li class="mod-menu">
-                            <a title="我的收藏" target="_top" class="vm-hd islog" href="/index.php?ref_wbt=3.2-2.3.1031.5&amp;ref_refer=%2F&amp;act=member_favorites&amp;op=fglist" wbury="1">我的收藏<i class="intro-icons icons-down trans rotate"></i></a>
-                            <div class="vm-bd dropdown my-collect" style="display: none;">
-                                <ul>
-                                    <li>
-                                        <a target="_top" class="islog" href="/index.php?ref_wbt=3.2-2.3.1031.6&amp;ref_refer=%2F&amp;act=member_favorites&amp;op=fglist" wbury="1">收藏的商品</a>
-                                    </li>
-                                    <li>
-                                        <a target="_top" class="islog" href="/index.php?ref_wbt=3.2-2.3.1031.7&amp;ref_refer=%2F&amp;act=member_favorites&amp;op=fslist" wbury="1">收藏的店铺</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!---<li class="mod-menu"><a href="http://kadangwj.tmall.com/shop/view_shop.htm" target="_blank">天猫店</a></li>-->
-                        <li class="mod-menu"><span title="在线客服" onclick="NTKF.im_openInPageChat('kd_1000_9999');" class="qqkefu">在线客服</span></li>
-                        <li class="mod-menu"><a id="collKd" title="收藏<%=_sys.sitename%>" href="javascript:void(0)">收藏<%=_sys.sitename%></a></li>
-                    </ul>
-                </div>
-                <div id="J_Welcome" class="intro-login">
-                    Hi，欢迎来到<%=_sys.sitename%>
-                    <a title="登录" id="J_UserLogin" href="javascript:;">登录</a>
-                    <a title="注册" id="J_UserReg" href="javascript:;">注册</a>
-                </div>
-            </div>
-            <div class="kd-detail">
-                <img src="http://img1.i.kadang.cn/static/mall/index/kdDes.png" class="fr kdDes">
-                <div class="header-mid fr">
-                    <div kdref="1048" class="lay-search">
-                        <!--<input type="hidden" id="search_act" name="act" value="search">-->
-                        <input type="hidden" value="log_search_word" name="log_search_word" id="log_search_word">
-                        <input type="text" data-search-des="" data-keyword="" placeholder="七夕情人节送女朋友什么？" maxlength="60" name="keyword" value="" id="keyword" class="textinput">
-                        <input type="submit" id="keywordBtn" class="search-button" value="搜索">
-                    </div>
-                    <div kdref="1365" class="search-tab">
-                        <a title="送女朋友" href="http://www.kadang.com/tag/296.html?ref_wbt=3.2-2.3.1365.0&amp;ref_refer=%2F" target="_blank" style="color:#646464" wbury="1">送女朋友</a>
-                        <a title="浪漫表白" href="http://www.kadang.com/tag/199.html?ref_wbt=3.2-2.3.1365.1&amp;ref_refer=%2F" target="_blank" style="color:#666666" wbury="1">浪漫表白</a>
-                        <a title="我的订单查询" href="http://www.kadang.com/index.php?ref_wbt=3.2-2.3.1365.2&amp;ref_refer=%2F&amp;act=member&amp;op=order" target="_blank" style="color:#646464" wbury="1">我的订单查询</a>
-                    </div>
-                </div>
-                <a target="_blank" href="http://www.kadang.com/zt/qxloveyou.html?ref_wbt=3.2-2.3.365.0&amp;ref_refer=%2F" class="topic" kdref="365" wbury="1"><img height="70" width="167" alt="七夕氛围" src="http://img2.i.kadang.cn/upload/1/adv/8a97735415b0e0e79a8e715c11cf7f9d.gif"></a>
-            </div>
-        </div>
-    </div>
-    <div class="nav">
-        <div class="container clearfix">
-            <!--按兴趣类目选礼物代码隐藏-->
-            <div class="nav-menu" id="J_NavMenu">
-                <ul kdref="1029" class="clearfix menu-list menu-ul">
-                    <li style="display:none"><a title="首页" href="http://www.kadang.com/?ref_wbt=3.2-2.3.1029.0&amp;ref_refer=%2F" wbury="1">首页</a></li>
-                    <li class="submenu index">
-                        <a title="顺丰包邮 当天发货" target="_blank" href="http://www.kadang.com/tag/573.html?ref_wbt=3.2-2.3.1029.1&amp;ref_refer=%2F" class="item fl" wbury="1">
-                            顺丰包邮 当天发货                      <img class="navHot" src="http://img1.i.kadang.cn/static/mall/common/navHot.gif">
-                        </a>
-                    </li>
-                    <li class="submenu index">
-                        <a title="送女生" target="_blank" href="http://www.kadang.com/zt/girl.html?ref_wbt=3.2-2.3.1029.2&amp;ref_refer=%2F" class="item fl" wbury="1">
-                            送女生              </a>
-                    </li>
-                    <li class="submenu index">
-                        <a title="送男生" target="_blank" href="http://www.kadang.com/tag/76.html?ref_wbt=3.2-2.3.1029.3&amp;ref_refer=%2F" class="item fl" wbury="1">
-                            送男生              </a>
-                    </li>
-                    <li class="submenu index">
-                        <a title="生日礼物" target="_blank" href="http://www.kadang.com/zt/birthday.html?ref_wbt=3.2-2.3.1029.4&amp;ref_refer=%2F" class="item fl" wbury="1">
-                            生日礼物                  </a>
-                    </li>
-                    <li class="submenu index">
-                        <a title="本周新品" target="_blank" href="http://www.kadang.com/tag/375.html?ref_wbt=3.2-2.3.1029.5&amp;ref_refer=%2F" class="item fl" wbury="1">
-                            本周新品              </a>
-                    </li>
-                    <li class="submenu index">
-                        <a title="七夕情人节" target="_blank" href="http://www.kadang.com/zt/qxloveyou.html?ref_wbt=3.2-2.3.1029.6&amp;ref_refer=%2F" class="item fl" wbury="1">
-                            七夕情人节              </a>
-                    </li>
-                    <li class="navHover" style="width: 90.9874px; left: 0px; opacity: 0;"></li>
+</script>
+<nav>
+    <div class="sidebar">
+        <ul class="sidenav">
+            <li>
+                <a href="javascript:;" class="sidenav_parent"><b class="ficon fa fa-plus-square"></b>帐号管理</a>
+                <ul style="display:none" class="sidenav_sub">
+                    <li class=""> <a href="http://dev.ilifeceo.com/wp/index.php?s=/Home/MemberPublic/lists.html">公众号管理 </a> <b class="active_arrow"></b></li>
+                    <li class=""> <a href="http://dev.ilifeceo.com/wp/index.php?s=/Home/CreditConfig/lists.html">积分配置 </a> <b class="active_arrow"></b></li>
                 </ul>
-            </div>
-            <!-- 	<div style="float: right;" kdref="1032">
-                    <a href="http://love.kadang.com/zt/qixi.html" target="_blank" title="七夕礼物专场"><img src="http://www.kadang.com/static/mall/index/daohang-right.png" alt="七夕礼物专场"/></a>
-                </div> -->
-        </div>
+            </li>
+
+            <li>
+                <a href="javascript:;" class="sidenav_parent"><b class="ficon fa fa-plus-square"></b>微设置</a>
+                <ul style="display:none" class="sidenav_sub">
+                    <li class=""> <a title="用户关注公众号时发送的欢迎信息，支持文本，图片，图文的信息" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Wecome/Wecome/config.html">
+                        <i class="icon-chevron-right"> </i>
+                        欢迎语 </a><b class="active_arrow"></b></li><li class=""> <a title="这是一个临时描述" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/CustomReply/CustomReply/lists.html">
+                    <i class="icon-chevron-right"> </i>
+                    自定义回复 </a><b class="active_arrow"></b></li><li class=""> <a title="自定义菜单能够帮助公众号丰富界面，让用户更好更快地理解公众号的功能" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/CustomMenu/CustomMenu/lists.html">
+                    <i class="icon-chevron-right"> </i>
+                    自定义菜单 </a><b class="active_arrow"></b></li><li class=""> <a title="设定默认回复功能" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Chat/Chat/config.html">
+                    <i class="icon-chevron-right"> </i>
+                    默认回复 </a><b class="active_arrow"></b></li><li class=""> <a title="WEIPHP模板消息" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Tmplmsg/Tmplmsg/lists.html">
+                    <i class="icon-chevron-right"> </i>
+                    模板消息 </a><b class="active_arrow"></b></li><li class=""> <a title="短信,模版消息,邮件通知等" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/NoticeCenter/NoticeCenter/lists.html">
+                    <i class="icon-chevron-right"> </i>
+                    通知中心 </a><b class="active_arrow"></b></li>                 </ul>
+            </li><li>
+            <a href="javascript:;" class="sidenav_parent"><b class="ficon fa fa-plus-square"></b>微运营</a>
+            <ul style="display:none" class="sidenav_sub">
+                <li class=""> <a title="统计每个插件使用情况" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Tongji/Tongji/lists.html">
+                    <i class="icon-chevron-right"> </i>
+                    运营统计 </a><b class="active_arrow"></b></li><li class=""> <a title="微商城描述" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Mall/Mall/config.html">
+                <i class="icon-chevron-right"> </i>
+                积分商城 </a><b class="active_arrow"></b></li><li class=""> <a title="精品商城描述" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/JPMall/JPMall/config.html">
+                <i class="icon-chevron-right"> </i>
+                精品商城 </a><b class="active_arrow"></b></li><li class=""> <a title="商品秒杀，限时抢购" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/SecKill/SecKill/lists.html">
+                <i class="icon-chevron-right"> </i>
+                商品秒杀 </a><b class="active_arrow"></b></li><li class=""> <a title="商品团购，3人成团" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/GroupPurchase/GroupPurchase/lists.html">
+                <i class="icon-chevron-right"> </i>
+                商品团购 </a><b class="active_arrow"></b></li><li class=""> <a title="商品砍价" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/KillPurchase/KillPurchase/lists.html">
+                <i class="icon-chevron-right"> </i>
+                商品砍价 </a><b class="active_arrow"></b></li><li class=""> <a title="景点售票" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/TicketsMall/TicketsMall/config.html">
+                <i class="icon-chevron-right"> </i>
+                票务商城 </a><b class="active_arrow"></b></li>                 </ul>
+        </li><li>
+            <a href="javascript:;" class="sidenav_parent"><b class="ficon fa fa-plus-square"></b>微互动</a>
+            <ul style="display:none" class="sidenav_sub">
+                <li class=""> <a title="支持文本和图片两类的投票功能" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Vote/Vote/lists.html">
+                    <i class="icon-chevron-right"> </i>
+                    投票 </a><b class="active_arrow"></b></li><li class=""> <a title="抽奖活动" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Scratch/Scratch/lists.html">
+                <i class="icon-chevron-right"> </i>
+                抽奖活动 </a><b class="active_arrow"></b></li><li class=""> <a title="粉丝每天签到可以获得积分。" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/SignIn/SignIn/lists.html">
+                <i class="icon-chevron-right"> </i>
+                签到 </a><b class="active_arrow"></b></li><li class=""> <a title="用户在微信里输入“留言建议”四个字时，返回一个图文信息，引导用户进入填写建议意见的3G页面，用户填写信息提交后显示感谢之意并提示关闭页面返回微信
+管理员可以在管理中心里看到用户反馈的内容列表，并对内容进行编辑，删除操作" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Suggestions/Suggestions/config.html">
+                <i class="icon-chevron-right"> </i>
+                留言建议 </a><b class="active_arrow"></b></li><li class=""> <a title="报名活动" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Registration/Registration/lists.html">
+                <i class="icon-chevron-right"> </i>
+                报名活动 </a><b class="active_arrow"></b></li><li class=""> <a title="主要功能有试卷管理，题目录入管理，考生信息和考分汇总管理。" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Exam/Exam/lists.html">
+                <i class="icon-chevron-right"> </i>
+                微考试 </a><b class="active_arrow"></b></li><li class=""> <a title="摇一摇比赛" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/ShakeGame/ShakeGame/lists.html">
+                <i class="icon-chevron-right"> </i>
+                摇一摇比赛 </a><b class="active_arrow"></b></li><li class=""> <a title="聊天室" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Chatroom/Chatroom/lists.html">
+                <i class="icon-chevron-right"> </i>
+                聊天群组 </a><b class="active_arrow"></b></li><li class=""> <a title="助力活动" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Help/Help/lists.html">
+                <i class="icon-chevron-right"> </i>
+                助力活动 </a><b class="active_arrow"></b></li><li class=""> <a title="秒杀" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Vexseckill/Vexseckill/lists.html">
+                <i class="icon-chevron-right"> </i>
+                V秒杀 </a><b class="active_arrow"></b></li>                 </ul>
+        </li><li>
+            <a href="javascript:;" class="sidenav_parent"><b class="ficon fa fa-plus-square"></b>微酒店</a>
+            <ul style="display:none" class="sidenav_sub">
+                <li class=""> <a title="客房在线预定（西软版本）" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Hotel/Hotel/lists.html">
+                    <i class="icon-chevron-right"> </i>
+                    在线预定 </a><b class="active_arrow"></b></li><li class=""> <a title="集成西软各版本接口调用方法，包括单店版，小集团版CRS及其集团版XMS" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/XRSDK/XRSDK/config.html">
+                <i class="icon-chevron-right"> </i>
+                西软集成接口插件 </a><b class="active_arrow"></b></li><li class=""> <a title="公寓管理" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/ApartmentManage/ApartmentManage/config.html">
+                <i class="icon-chevron-right"> </i>
+                公寓管理 </a><b class="active_arrow"></b></li>                 </ul>
+        </li><li>
+            <a href="javascript:;" class="sidenav_parent"><b class="ficon fa fa-plus-square"></b>微餐饮</a>
+            <ul style="display:none" class="sidenav_sub">
+                <li class=""> <a title="支持海亨会员体系，包括会员信息查询，会员积分，票劵等" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/HH2Member/HH2Member/config.html">
+                    <i class="icon-chevron-right"> </i>
+                    海亨会员系统 </a><b class="active_arrow"></b></li><li class=""> <a title="海亨点餐模块" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/HH2POS/HH2POS/lists.html">
+                <i class="icon-chevron-right"> </i>
+                点餐模块(海亨) </a><b class="active_arrow"></b></li><li class=""> <a title="实现海亨票劵系统功能" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/HH2Ticket/HH2Ticket/lists.html">
+                <i class="icon-chevron-right"> </i>
+                票劵模块(海亨) </a><b class="active_arrow"></b></li><li class=""> <a title="餐位预订" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/FoxPOS/FoxPOS/config.html">
+                <i class="icon-chevron-right"> </i>
+                餐位预订 </a><b class="active_arrow"></b></li><li class=""> <a title="万能订餐系统" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/AyWnDinner/AyWnDinner/lists.html">
+                <i class="icon-chevron-right"> </i>
+                万能订餐 </a><b class="active_arrow"></b></li><li class=""> <a title="这是一个临时描述" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/TakeawayMall/TakeawayMall/config.html">
+                <i class="icon-chevron-right"> </i>
+                外卖商城 </a><b class="active_arrow"></b></li><li class=""> <a title="餐饮模块(西软)" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Catering/Catering/lists.html">
+                <i class="icon-chevron-right"> </i>
+                餐饮模块(西软) </a><b class="active_arrow"></b></li>                 </ul>
+        </li><li>
+            <a href="javascript:;" class="sidenav_parent"><b class="ficon fa fa-plus-square"></b>酒店业务</a>
+            <ul style="display:none" class="sidenav_sub">
+                <li class=""> <a title="提供酒店会议相关服务
+支持会务组录入会议日程，餐饮安排等，录入参会人员基本信息，录入会议相关文档材料。
+创建会议二维码以便扫描签到等" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Meeting/Meeting/lists.html">
+                    <i class="icon-chevron-right"> </i>
+                    会议服务 </a><b class="active_arrow"></b></li><li class=""> <a title="微官网" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/WeiSite/WeiSite/config.html">
+                <i class="icon-chevron-right"> </i>
+                微官网 </a><b class="active_arrow"></b></li><li class=""> <a title="实现3G首页、微信登录，微信用户绑定，微信用户信息初始化等基本功能" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/UserCenter/UserCenter/config.html">
+                <i class="icon-chevron-right"> </i>
+                用户中心 </a><b class="active_arrow"></b></li><li class=""> <a title="酒店服务描述" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Service/Service/lists.html">
+                <i class="icon-chevron-right"> </i>
+                酒店服务 </a><b class="active_arrow"></b></li><li class=""> <a title="房产业主管理，半岛四季" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/House/House/lists.html">
+                <i class="icon-chevron-right"> </i>
+                房产业务 </a><b class="active_arrow"></b></li><li class=""> <a title="这是一个临时描述" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Spa/Spa/lists.html">
+                <i class="icon-chevron-right"> </i>
+                水疗预订 </a><b class="active_arrow"></b></li><li class=""> <a title="会场预订" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/SiteBook/SiteBook/lists.html">
+                <i class="icon-chevron-right"> </i>
+                会场预订 </a><b class="active_arrow"></b></li><li class=""> <a title="2D热区" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/VisualChoice/VisualChoice/lists.html">
+                <i class="icon-chevron-right"> </i>
+                2D热区 </a><b class="active_arrow"></b></li><li class=""> <a title="这是一个临时描述" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Invitation/Invitation/lists.html">
+                <i class="icon-chevron-right"> </i>
+                邀请函 </a><b class="active_arrow"></b></li><li class=""> <a title="支持微信语音的客房服务，住店微信会员可通过微信语音提出客房服务申请，指定的客房服务专员可收到微信通知" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/RMService/RMService/lists.html">
+                <i class="icon-chevron-right"> </i>
+                客房服务 </a><b class="active_arrow"></b></li><li class=""> <a title="通过微信端支付的方式打赏小费" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/EnjoyTips/EnjoyTips/lists.html">
+                <i class="icon-chevron-right"> </i>
+                微信打赏 </a><b class="active_arrow"></b></li><li class=""> <a title="婚宴预订" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/WeddingBook/WeddingBook/lists.html">
+                <i class="icon-chevron-right"> </i>
+                婚宴预订 </a><b class="active_arrow"></b></li>                 </ul>
+        </li><li>
+            <a href="javascript:;" class="sidenav_parent"><b class="ficon fa fa-plus-square"></b>高级插件</a>
+            <ul style="display:none" class="sidenav_sub">
+                <li class=""> <a title="微医疗" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Medical/Medical/config.html">
+                    <i class="icon-chevron-right"> </i>
+                    微医疗 </a><b class="active_arrow"></b></li><li class=""> <a title="调用百度地图api，需自己申请秘钥http://lbsyun.baidu.com/apiconsole/key" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Weather/Weather/config.html">
+                <i class="icon-chevron-right"> </i>
+                天气插件 </a><b class="active_arrow"></b></li><li class=""> <a title="微信支付的插件" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/WxPay/WxPay/config.html">
+                <i class="icon-chevron-right"> </i>
+                微支付 </a><b class="active_arrow"></b></li><li class=""> <a title="微信卡劵通用接口插件" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/MTicket/MTicket/lists.html">
+                <i class="icon-chevron-right"> </i>
+                微卡劵 </a><b class="active_arrow"></b></li><li class=""> <a title="支持微信粉丝打印照片" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/MPrint/MPrint/lists.html">
+                <i class="icon-chevron-right"> </i>
+                微打印 </a><b class="active_arrow"></b></li><li class=""> <a title="用于Dr.com的Wifi系统对接" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Drcom/Drcom/lists.html">
+                <i class="icon-chevron-right"> </i>
+                城市热点wifi接口 </a><b class="active_arrow"></b></li><li class=""> <a title="自有平台开放API接口插件" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/OpenAPI/OpenAPI/config.html">
+                <i class="icon-chevron-right"> </i>
+                自有平台开放API </a><b class="active_arrow"></b></li><li class=""> <a title="配置开启多客服，需要认证服务号" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/CustomerService/CustomerService/config.html">
+                <i class="icon-chevron-right"> </i>
+                多客服支持 </a><b class="active_arrow"></b></li><li class=""> <a title="微洗衣描述" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Wash/Wash/config.html">
+                <i class="icon-chevron-right"> </i>
+                微洗衣 </a><b class="active_arrow"></b></li><li class=""> <a title="扫码付" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/WxPayScan/WxPayScan/config.html">
+                <i class="icon-chevron-right"> </i>
+                扫码付 </a><b class="active_arrow"></b></li><li class=""> <a title="这是一个临时描述" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/ShiJiNet/ShiJiNet/config.html">
+                <i class="icon-chevron-right"> </i>
+                石基信息 </a><b class="active_arrow"></b></li><li class=""> <a title="客户云端存储" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Storage/Storage/lists.html">
+                <i class="icon-chevron-right"> </i>
+                云端存储 </a><b class="active_arrow"></b></li><li class=""> <a title="停车场自主系统" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/WxParking/WxParking/lists.html">
+                <i class="icon-chevron-right"> </i>
+                微信停车场 </a><b class="active_arrow"></b></li><li class=""> <a title="统计业务运营情况" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Statistics/Statistics/lists.html">
+                <i class="icon-chevron-right"> </i>
+                业务统计 </a><b class="active_arrow"></b></li>                 </ul>
+        </li>            <li>
+            <a href="javascript:;" class="sidenav_parent"><b class="ficon fa fa-plus-square "></b>其它功能</a>
+            <ul style="display:none" class="sidenav_sub">
+                <li class=""> <a title="微信jsSdk分享插件" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/WeiApi/WeiApi/lists.html">
+                    <i class="icon-chevron-right"> </i>
+                    微信Api插件 </a> </li><li class=""> <a title="" href="http://dev.ilifeceo.com/wp/index.php?s=/addon/Rent/Rent/config.html">
+                <i class="icon-chevron-right"> </i>
+                我要租 </a> </li>              </ul>
+        </li>        </ul>
     </div>
-</header>
+</nav>
