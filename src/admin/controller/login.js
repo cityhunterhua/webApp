@@ -11,10 +11,11 @@ export default class extends Base {
     //auto render template file index_index.html
     return this.display();
   }
-  doLoginAction(){
+  async dologinAction(){
       let data=this.post();
       let md5Pas = await think.md5(data.password);
       let uname = await data.username;
+      return this.json(data);
       let result=await this.model("user").where({name:uname,role:{">":0} }).find();
       let info={
         name: uname,
