@@ -7,25 +7,27 @@ export default class extends Base {
    * index action
    * @return {Promise} []
    */
-  indexAction(){
-    //auto render template file index_index.html
-    return this.display();
+  async indexAction(){
+      //auto render template file index_index.html
+      let userinfo =  await this.session("userInfo");
+      if(!await think.isEmpty(userinfo)) return this.redirect("/admin/index");
+      return this.display();
   }
   async dologinAction(){
-      let data=this.post();
+      let data   = this.post();
       let md5Pas = await think.md5(data.password);
-      let uname = await data.username;
-      return this.json(data);
-      let result=await this.model("user").where({name:uname,role:{">":0} }).find();
-      let info={
-        name: uname,
-        password: md5Pas
-      }
-      if(uname===result.name&&md5Pas===result.password){
-        await this.session("userInfo", info);
-        return this.json({status:1,msg:"登陆成功!"});
+      let uname  = await data.username;
+      let result = await this.model("users").where({username:uname,passwd:md5Pas}).find();
+      if(result.id){
+         let now = await think.datetime(new Date, "YYYY-MM-DD HH:mm:ss");
+         await this.model("users").where({id:result.id}).update({lasttime:now});
+         await this.session("userInfo", data);
+         return this.json({status:1,msg:"鐧诲綍鎴愬姛~"});
       }else{
-        return this.json({status:0,msg:"用户名或密码错误!"});
+         return this.json({status:0,msg:"鐢ㄦ埛鍚嶆垨瀵嗙爜鍑洪敊~"});
       }
+  }
+  async doregisterAction(){
+      let data = this.post();
   }
 }
