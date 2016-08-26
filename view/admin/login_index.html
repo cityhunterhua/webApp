@@ -51,14 +51,14 @@
                     <label for="inputEmail" class="control-label">用户名</label>
                     <div class="controls">
                       <span class="fa fa-user"></span>
-                      <input type="text" name="username" value="" datatype="*1-16" nullmsg="请填写用户名" errormsg="请填写1-16位用户名" ajaxurl="/member/checkUserNameUnique.html" placeholder="请输入用户名" class="span3 j_UserName" id="inputEmail">
+                      <input type="text" name="username" value="" datatype="*1-16" nullmsg="请填写用户名" errormsg="请填写1-16位用户名" ajaxurl="/member/checkUserNameUnique.html" placeholder="请输入用户名" class="span3 j_LoginUserName" id="inputEmail">
                     </div>
                   </div>
                   <div class="control-group">
                     <label for="inputPassword" class="control-label">密码</label>
                     <div class="controls">
                       <span class="fa fa-key"></span>
-                      <input type="password" name="password" datatype="*6-20" nullmsg="请填写密码" errormsg="密码为6-20位" placeholder="请输入密码" class="span3 j_PassWord" id="inputPassword">
+                      <input type="password" name="password" datatype="*6-20" nullmsg="请填写密码" errormsg="密码为6-20位" placeholder="请输入密码" class="span3 j_LoginPassWord" id="inputPassword">
                     </div>
                   </div>
                 </div>
@@ -78,30 +78,30 @@
 
           <!--注册-->
           <section style="display: none;" class="reg_box boxTable">
-            <form method="post" action="http://dev.ilifeceo.com/wp/index.php?s=/Home/User/register.html" id="form2" class="login-form">
+            <form method="post" action="/admin/login/register" id="form2" class="login-form">
               <div class="form_body">
                 <div class="control-group">
                   <label for="username" class="control-label">用户名</label>
                   <div class="controls">
-                    <input type="text" name="username" value="" datatype="*1-16" nullmsg="请填写用户名" errormsg="请填写1-16位用户名" ajaxurl="/member/checkUserNameUnique.html" placeholder="请输入用户名" class="span3" id="username">
+                    <input type="text" name="username" value="" datatype="*1-16" nullmsg="请填写用户名" errormsg="请填写1-16位用户名" ajax-url="/admin/login/checkusername" placeholder="请输入用户名" class="span3 j_UserName" id="username">
                   </div>
                 </div>
                 <div class="control-group">
                   <label for="inputPassword" class="control-label">密码</label>
                   <div class="controls">
-                    <input type="password" name="password" datatype="*6-20" nullmsg="请填写密码" errormsg="密码为6-20位" placeholder="请输入密码" class="span3" id="inputPassword">
+                    <input type="password" name="password" datatype="*6-20" nullmsg="请填写密码" errormsg="密码为6-20位" placeholder="请输入密码" class="span3 j_PassWord" id="inputPassword">
                   </div>
                 </div>
                 <div class="control-group">
                   <label for="repassword" class="control-label">确认密码</label>
                   <div class="controls">
-                    <input type="password" name="repassword" datatype="*" nullmsg="请填确认密码" errormsg="您两次输入的密码不一致" recheck="password" placeholder="请再次输入密码" class="span3" id="repassword">
+                    <input type="password" name="repassword" datatype="*" nullmsg="请填确认密码" errormsg="您两次输入的密码不一致" recheck="password" placeholder="请再次输入密码" class="span3 j_RePassWord" id="repassword">
                   </div>
                 </div>
                 <div class="control-group">
                   <label for="inputEmail" class="control-label">邮箱</label>
                   <div class="controls">
-                    <input type="text" name="email" value="" datatype="e" nullmsg="请填写邮箱" errormsg="请填写正确格式的邮箱" ajaxurl="/member/checkUserEmailUnique.html" placeholder="请输入电子邮件" class="span3" id="inputEmail">
+                    <input type="text" name="email" value="" datatype="e" nullmsg="请填写邮箱" errormsg="请填写正确格式的邮箱" ajaxurl="/member/checkUserEmailUnique.html" placeholder="请输入电子邮件" class="span3 j_Email" id="inputEmail">
                   </div>
                 </div>
                 <!--<div class="control-group">
@@ -120,7 +120,7 @@
                 <div class="control-group">
                   <!--<label class="control-label">&nbsp;</label>-->
                   <div style="width: 308px; margin: 0 auto; float: none;" class="controls">
-                    <button style="width: 100%;background: #1dbd03;" class="btn" type="submit">注 册</button>
+                    <button style="width: 100%;background: #1dbd03;" class="btn j_Register" ajax-url="/admin/login/doregister" type="button">注 册</button>
                   </div>
                 </div>
               </div>
@@ -133,17 +133,17 @@
   </div>
   <script>
     $(function(){
-
+      var csrf = $("#csrf").val()
       //登录提交
       $(".j_LoginBtn").click(function(){
-        var username  = $(".j_UserName").val();
-        var password  = $(".j_PassWord").val();
+        var username  = $(".j_LoginUserName").val();
+        var password  = $(".j_LoginPassWord").val();
         if(username == ""){alert("用户名不能为空~");return}
         else if(password == ""){alert("密码不能为空~");return}
         var mydata={
           username:username,
           password:password,
-          __CSRF__:$("#csrf").val()
+          __CSRF__:csrf
         }
         $.ajax({
           url:'/admin/login/dologin',
@@ -159,6 +159,66 @@
           }
         })
       })
+
+      //用户注册
+      $(".j_UserName").blur(function(){
+           var username = $(this).val();
+           var url = $(this).attr("ajax-url");
+           var mydata = {
+              username:username,
+             __CSRF__:csrf
+           }
+           $.ajax({
+               url:url,
+               data:mydata,
+               type:"post",
+               dataType:"json",
+               success:function(d){
+                  if(d.status == 0) alert("该用户名已存在，请替换~");
+               }
+           });
+      });
+
+      $(".j_Register").click(function(){
+            var passwd    = $(".j_PassWord").val();
+            var repasswd  = $(".j_RePassWord").val();
+            var username  = $(".j_UserName").val();
+            var email     = $(".j_Email").val();
+            var url = $(this).attr("ajax-url");
+            if(username == ""){
+               alert("请输入用户名~");
+               return
+            }else if(passwd == ""||passwd.length<6){
+               alert("密码长度不能小于6位~");
+               return;
+            }else if(passwd != repasswd){
+               alert("两次密码输入不一致~")
+               return;
+            }else if(email == ""){
+              alert("邮件地址不能为空~");return;
+            }
+            var mydata = {
+              username:username,
+              passwd:passwd,
+              email:email,
+              __CSRF__:csrf
+            }
+            $.ajax({
+               url:url,
+               data:mydata,
+               type:"post",
+               dataType:"json",
+               success:function(d){
+                 if(d.status===1){
+                   alert("注册成功~");
+                   window.location.reload();
+                 }else {
+                   alert(d.msg);
+                   return;
+                 }
+              }
+            })
+      });
 
       //tab切换
       $(".tableBox span").each(function(i){

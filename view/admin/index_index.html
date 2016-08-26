@@ -1,5 +1,46 @@
 <%include inc/header.html%>
 <section class="container" id="main-container">
   <%include inc/menu.html%>
+  <script type="text/javascript">
+      var cardNumberCheck = {
+          outCardsRole:new Array(new Array("MasterCard", "51,52,53,54,55", "16"),
+                  new Array("VisaCard", "4", "13,16"),
+                  new Array("AmExCard", "34,37", "15"),
+                  new Array("DinersClubCard", "30,36,38", "14"),
+                  new Array("DiscoverCard", "6011", "16"),
+                  new Array("enRouteCard", "2014,2149", "15"),
+                  new Array ("JCBCard", "3088,3096,3112,3158,3337,3528", "16")),
+          luhnCheck:function(cardnum,role){
+             var self = this;
+             var cardnum = cardnum;
+             if (isNaN(cardnum)) return false;
+             var role = role ? role :self.outCardsRole
+             var status = false;
+             $.each(role,function(i){
+                 var cardHeads = role[i][1].split(",");
+                 var cardlens  = role[i][2].split(",");
+                 if(self.inArray(cardnum.length,cardlens)&&self.headerInArray(cardnum,cardHeads)){
+                     status = true;
+                     return true;
+                 }
+             });
+             return status;
+          },
+          inArray:function(search,array){
+              for(var i in array){
+                if(array[i]==search)  return true;
+              }
+              return false;
+          },
+          headerInArray:function(search,array){
+               for(var i in array){
+                  if(search.indexOf(array[i]) == 0) return true;
+               }
+               return false;
+          }
+      }
+      var test = cardNumberCheck.luhnCheck("2014120120120000");
+      console.info(test);
+  </script>
 </section>
 <%include inc/footer.html%>
