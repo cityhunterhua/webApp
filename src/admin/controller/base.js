@@ -9,6 +9,10 @@ export default class extends think.controller.base {
     let csrf=await this.session("__CSRF__");
     this.assign("csrf",csrf);
     let userinfo=await this.session("userInfo");
+    let username = "";
+    if(userinfo) username= userinfo.username;
+    this.assign('username',username);
+    console.log(userinfo);
     if(think.isEmpty(userinfo)&&this.http.controller!="login"){
       return this.redirect("/admin/login");
     }else{
